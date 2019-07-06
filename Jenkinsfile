@@ -2,6 +2,7 @@ pipeline {
 agent any
   tools {
         maven 'localMaven'
+        jdk 'localJava'
     }
 stages{
 stage('clone my code'){
