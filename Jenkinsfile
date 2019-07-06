@@ -32,6 +32,6 @@ steps {
 withMaven(maven :'localMaven')
 sh 'mvn install'
 }
-}
+} 
 }
 }
