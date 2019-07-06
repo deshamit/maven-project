@@ -1,5 +1,9 @@
 pipeline {
 agent any
+  tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
 stages{
 stage('clone my code'){
   steps{
@@ -33,5 +37,5 @@ withMaven(maven :'localMaven')
 sh 'mvn install'
   }
   } 
-  }
+}
 }
