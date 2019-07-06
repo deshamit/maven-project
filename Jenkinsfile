@@ -13,5 +13,24 @@ stage('compile my code'){
   }
   }
 }
+stage('test'){
+steps {
+withMaven(maven :'localMaven'){
+sh 'mvn test'
+}
+}
+}
+stage('package'){
+steps {
+withMaven(maven :'localMaven'){
+sh 'mvn package'
+}
+}
+}
+stage('install'){
+steps {
+withMaven(maven :'localMaven')
+sh 'mvn install'
+}
 }
 }
