@@ -30,7 +30,7 @@ sh 'mvn package'
 stage('install'){
 steps {
 withMaven(maven :'localMaven')
-sh 'mvn install'
+sh 'mvn clean install'
 }
 }
 stage('deploy to tomcat'){
