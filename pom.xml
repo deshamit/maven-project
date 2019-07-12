@@ -32,6 +32,11 @@
   <build>
     <plugins>
       <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>7.9.Final</version>
+            </plugin>
+             <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.7</source>
