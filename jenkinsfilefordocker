@@ -6,7 +6,7 @@ stage ('package stage') {
 sh label: '', script: 'mvn clean package '
 }
 stage ('docker image build') {
-sh 'docker build -t deshamit/deshamit1.0.0'
+sh 'docker build -t deshamit:prod1'
 }
 }
 
