@@ -1,0 +1,6 @@
+node{
+stage ('scm checkout') {
+git 'https://github.com/deshamit/maven-project'
+}
+}
+
