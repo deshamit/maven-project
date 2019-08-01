@@ -15,7 +15,7 @@ withCredentials([string(credentialsId: '', variable: 'docker')]) {
     sh 'docker push pkw0301/prakash-app:1.0.0'
     }
     stage ('Deploy to Dev') {
-def dockerRun = 'docker run -d -p 9000:8080 --name my-tomcat-app pkw0301/prakash-app:1.0.0'
+def dockerRun = 'docker run -d -p 9000:8080 --name my-tomcat-app deshamit/prakash-app:1.0.0'
 sshagent(['deploy-to-dev-docker1']) {
 sh "ssh -o StrictHostKeyChecking=no ec2-user@13.235.27.90 ${dockerRun}"
 }
