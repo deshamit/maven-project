@@ -6,16 +6,16 @@ stage ('package stage') {
 sh label: '', script: 'mvn clean package '
 }
 stage ('docker image build') {
-sh 'docker build -t deshamit/prakash-app:1.0.0 .'
+sh 'docker build -t deshamit/ad-app:1.0.0 .'
 }
 stage ('Push Docker image to DockerHub') {
 withCredentials([string(credentialsId: '', variable: 'docker')]) {
     sh "docker login -u deshamit -p ${docker}"
     }
-    sh 'docker push deshamit/prakash-app:1.0.0'
+    sh 'docker push deshamit/ad-app:1.0.0'
     }
     stage ('Deploy to Dev') {
-def dockerRun = 'docker run -d -p 9000:8080 --name my-tomcat-app deshamit/prakash-app:1.0.0'
+def dockerRun = 'docker run -d -p 9000:8080 --name my-tomcat-app deshamit/ad-app:1.0.0'
 sshagent(['deploy-to-dev-docker1']) {
 sh "ssh -o StrictHostKeyChecking=no ec2-user@13.235.27.90 ${dockerRun}"
 }
