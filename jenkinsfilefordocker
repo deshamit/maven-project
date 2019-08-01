@@ -21,4 +21,3 @@ sh "ssh -o StrictHostKeyChecking=no ec2-user@13.235.27.90 ${dockerRun}"
 }
 }
 }
-
